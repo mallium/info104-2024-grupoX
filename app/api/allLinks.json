@@ -1,0 +1,65 @@
+[
+  {
+    "pageId": "query",
+    "links": [
+      { "href": "/query", "label": "Query" },
+      { "href": "/query/response", "label": "Response" }
+    ]
+  },
+  {
+    "pageId": "api",
+    "links": [
+      { "href": "/api-ejemplo", "label": "API" },
+      { "href": "/api-ejemplo/ejemplo-1", "label": "Ejemplo 1" },
+      { "href": "/api-ejemplo/ejemplo-2", "label": "Ejemplo 2" }
+    ]
+  },
+  {
+    "pageId": "hooks",
+    "links": [
+      { "href": "/hooks", "label": "Hooks" },
+      { "href": "/hooks/useState", "label": "useState" },
+      { "href": "/hooks/useState-2", "label": "useState-2" },
+      { "href": "/hooks/useEffect", "label": "useEffect" },
+      { "href": "/hooks/useEffect-2", "label": "useEffect-2" },
+      { "href": "/hooks/useContext", "label": "useContext" }
+    ]
+  },
+  {
+    "pageId": "localStorage",
+    "links": [
+      { "href": "/localStorage", "label": "LocalStorage" },
+      { "href": "/localStorage/ejemplo-1", "label": "Ejemplo 1" },
+      { "href": "/localStorage/ejemplo-2", "label": "Ejemplo 2" }
+    ]
+  },
+  {
+    "pageId": "probar-cosas",
+    "links": [
+      { "href": "/probar-cosas", "label": "Probar_Cosas" },
+      { "href": "/probar-cosas/ejemplo-1", "label": "Ejemplo 1" },
+      { "href": "/probar-cosas/ejemplo-2", "label": "Ejemplo 2" },
+      { "href": "/probar-cosas/ejemplo-3", "label": "Ejemplo 3" }
+    ]
+  },
+  {
+    "pageId": "chakraUI",
+    "links": [
+      { "href": "/chakraUI", "label": "ChakraUI" },
+      { "href": "/chakraUI/ejemplo-1", "label": "Ejemplo 1" },
+      { "href": "/chakraUI/ejemplo-2", "label": "Ejemplo 2" }
+    ]
+  },
+  {
+    "pageId": "json",
+    "links": [
+      { "href": "/json", "label": "Json" },
+      { "href": "/json/ejemplo-1", "label": "Ejemplo 1" },
+      { "href": "/json/ejemplo-2", "label": "Ejemplo 2" }
+    ]
+  },
+  {
+    "pageId": "posts",
+    "links": [{ "href": "/posts", "label": "Posts" }]
+  }
+]
