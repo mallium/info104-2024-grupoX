@@ -1,26 +1,108 @@
-import { Inter, Fira_Code } from "next/font/google";
+"use client";
 
-// Fuentes de texto (fonts)
-// Referencia: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
-const inter = Inter({ subsets: ["latin"] });
-const fira_code = Fira_Code({ subsets: ["latin"] });
-
-// Agregando un título y descripción a la página
-// Referencia: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
-export const metadata = {
-  title: "Home",
-  description: "Esta es la página de inicio",
-};
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
+  Button,
+  Input,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+} from "@chakra-ui/react";
+import { useRef, useState } from "react";
 
 export default function Home() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef();
+  const [contador, setContador] = useState(0);
+
   return (
     <>
-      <div className="container">
-        <h1 className="title">Home</h1>
-        {/* Ejemplo usando Font: Inter y Fira_Code */}
-        <p className={inter.className}>Ejemplo usando Inter</p>
-        <p className={fira_code.className}>Ejemplo usando Fira</p>
+      <div className="contenedor">
+        <div className="cabecera">
+          <h1>Home</h1>
+          <p>Ejemplo usando Inter</p>
+          <p className="">Ejemplo usando Fira</p>
+          <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
+            Open
+          </Button>
+        </div>
+        <div className="contenido">
+          <div className="contenido-izquierdo">
+            <Accordion>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box as="span" flex="1" textAlign="left">
+                      Section 1 title
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box as="span" flex="1" textAlign="left">
+                      Section 2 title
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </div>
+          <div className="contenido-derecho">
+            <div className="numero">{contador}</div>
+            <Button onClick={() => setContador(contador + 1)}>+</Button>
+          </div>
+        </div>
       </div>
+      <Drawer
+        isOpen={isOpen}
+        placement="right"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Create your account</DrawerHeader>
+
+          <DrawerBody>
+            <Input placeholder="Type here..." />
+          </DrawerBody>
+
+          <DrawerFooter>
+            <Button variant="outline" mr={3} onClick={onClose}>
+              Cancel
+            </Button>
+            <Button colorScheme="blue">Save</Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
     </>
   );
 }
