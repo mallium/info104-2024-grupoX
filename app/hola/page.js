@@ -3,6 +3,7 @@ export default function Home() {
     <>
       <div>Hola!</div>
       <p>cscsvs afgas asfg</p>
+      <h1>Chao!</h1>
     </>
   );
 }
